@@ -29,16 +29,16 @@ jobs:
       env:
         PWS_URL: ${{ secrets.PWS_URL }}
       run: |
-          # Check if main branch exists locally
+          # Check if master branch exists locally
           if ! git show-ref --verify --quiet refs/heads/main; then
-            echo "Creating main branch"
+            echo "Creating master branch"
             git branch main
           fi
           
-          # Switch to main branch
+          # Switch to master branch
           git checkout main
 
-          # Push to main branch and capture the output
+          # Push to master branch and capture the output
           push_output=$(git push $PWS_URL main:main 2>&1)
           if [[ $? -ne 0 ]]; then
             echo "Push failed with output: $push_output"

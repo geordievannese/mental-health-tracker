@@ -1,2 +1,2 @@
 release: python3 manage.py migrate --noinput
-web: gunicorn mentalhealthtrackerr.wsgi
+web: gunicorn mentalhealthtracker.wsgi
